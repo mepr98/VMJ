@@ -5,6 +5,7 @@
 // Importamos Todas Nuestras Dependencias
 const express = require("express");
 const session = require("express-session");
+const exphbs = require('express-handlebars');
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const path = require("path");
 const cookieParser = require("cookie-parser");
@@ -22,9 +23,11 @@ require("./config/passport");
 // Creamos La aplicacion en Express
 const app = express();
 
+app.engine('handlebars', exphbs ({defaultLayout: 'main' }));
+
 // Configuramos el Template Engine
 app.set("views", path.join(__dirname, "views")); // En la carpeta views es donde todos los archivos .pug deben estar
-app.set("view engine", "pug"); // En este caso estamos usando pug, pero ejs o handler bar tambien puede funcionar
+app.set("view engine", "handlebars"); // En este caso estamos usando pug, pero ejs o handler bar tambien puede funcionar
 
 // Esta linea nos permite servir los archivos estaticos que se encuentran en el servidor, como las fotos, js y css
 app.use(express.static(path.join(__dirname, "public")));
