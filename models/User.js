@@ -4,20 +4,23 @@ const md5 = require("md5");
 const bcrypt = require("bcryptjs");
 const sequelize = require("../config/database");
 
-const User = sequelize.define("User", {
-  name: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  email: {
-    type: Sequelize.STRING,
-    allowNull: false,
-    unique: true
-  },
-  password: {
-    type: Sequelize.STRING,
-    allowNull: false
-  }
+const User = sequelize.define("city", {
+  DI:{
+    type:Sequelize.INTEGER,
+    primaryKey:true
+},
+Name:{
+    type:Sequelize.STRING
+},
+CountryCode:{
+    type:Sequelize.STRING
+},
+District:{
+    type:Sequelize.STRING
+},
+Population:{
+    type:Sequelize.INTEGER
+},
 });
 
 User.prototype.compare = function(password) {

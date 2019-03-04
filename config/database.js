@@ -5,6 +5,10 @@ const { DATABASE, DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 const sequelize = new Sequelize(DATABASE, DB_USER, DB_PASSWORD, {
   host: DB_HOST,
   dialect: "mysql",
+  define:{
+    timestamps: false
+},
+operatorsAliases:false,
   pool: {
     max: 5,
     min: 0,
