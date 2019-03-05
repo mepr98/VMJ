@@ -1,0 +1,48 @@
+
+<section id="add" class="container">
+    <div class="form-wrap">
+      <h1>Añada una ciudad</h1>
+      
+        {{#each error}}
+        <div class="error">
+            <p>{{text}}</p>
+        </div>
+
+        {{/each}}
+      <form action="/add" method="POST">
+        <div class="input-group">
+          <label for="Name">Nombre de la ciudad</label>
+          <input type="text" name="Name" id="Name" class="input-box" placeholder=""
+            maxlength="100" value={{Name}}>
+        </div>
+        <div class="input-group">
+          <label for="DI">ID </label>
+          <input type="number" name="DI" id="DI" class="input-box" placeholder=""
+            maxlength="100" value={{DI}}>
+        </div>
+
+
+        <div class="input-group">
+          <label for="District">Distrito</label>
+          <input type="text" name="District" id="District" class="input-box" placeholder=""
+            maxlength="100" value={{District}}>
+        </div>
+
+        <div class="input-group">
+          <label for="CountryCode">Codigo del pais </label>
+          <input type="text" name="CountryCode" id="CountryCode" class="input-box" placeholder=""
+            maxlength="100" value={{CountryCode}}>
+        </div>
+
+        <div class="input-group">
+          <label for="Population">Poblacion</label>
+          <input type="number" name="Population" id="Population" class="input-box" placeholder="eg. 500, 5000, 10000"  value={{Population}}>
+        </div>
+
+        <input type="submit" value="Añada una ciudad" class="btn btn-reverse">
+      </form>
+    </div>
+  </section>
+ 
+      
+  

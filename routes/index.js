@@ -10,6 +10,8 @@ router.get("/", (req, res) => {
 });
 
 router.get("/user",CityController.verciudades);
+router.get("/add",CityController.agregar);
+router.post("/add",CityController.agregarciudades);
 
 router.get("signin", (req, res) => {
   res.render("auth/signin", { title: "Iniciar Sesion" });
