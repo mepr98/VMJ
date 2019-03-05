@@ -13,6 +13,9 @@ router.get("/user",CityController.verciudades);
 router.get("/add",CityController.agregar);
 router.post("/add",CityController.agregarciudades);
 
+router.get('/delete/:DI',CityController.eliminarciudad);
+router.post('/delete/:DI',CityController.eliminarciudad);
+
 router.get("signin", (req, res) => {
   res.render("auth/signin", { title: "Iniciar Sesion" });
 });

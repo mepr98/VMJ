@@ -49,8 +49,23 @@ exports.agregarciudades =(req,res)=>{
             District,
             Population,
         })
-        .then(City=>res.redirect('/user'))
-        .catch(err=>console.log(err));
+        .then(()=> {
+                     
+            res.redirect('/user');
+                   })
+                   .catch(err => console.log('ERROR IN CreateOffice ' + err));
     }
+
+}
+
+exports.eliminarciudad = (req,res)=>{
+const iddelete= req.params.DI;
+City.destroy({
+
+    where: { DI: iddelete }
+}).then(() => {
+ res.redirect('/user');
+})
+
 
 }
