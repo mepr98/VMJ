@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
+const City = require('../models/User');
 const authController = require("../controllers/authController");
 const userController = require("../controllers/userController");
+const CityController = require('../controllers/cityController');
 
 router.get("/", (req, res) => {
-  res.render("layout", { title: "Layout" });
+  res.render("main", { title: "Layout" });
 });
+
+router.get("/user",CityController.verciudades);
 
 router.get("signin", (req, res) => {
   res.render("auth/signin", { title: "Iniciar Sesion" });

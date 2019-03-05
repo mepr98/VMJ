@@ -4,7 +4,7 @@ const md5 = require("md5");
 const bcrypt = require("bcryptjs");
 const sequelize = require("../config/database");
 
-const User = sequelize.define("city", {
+const City = sequelize.define("city", {
   DI:{
     type:Sequelize.INTEGER,
     primaryKey:true
@@ -23,9 +23,9 @@ Population:{
 },
 });
 
-User.prototype.compare = function(password) {
+City.prototype.compare = function(password) {
   const hash = this.password;
   return bcrypt.compareSync(password, hash);
 };
 
-module.exports = User;
+module.exports = City;

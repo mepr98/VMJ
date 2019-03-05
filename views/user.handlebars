@@ -1,0 +1,23 @@
+ <section id="city" class="container">
+    <h1>Todas las ciudades</h1>
+    {{#each city}}
+        <div class="city">
+      <h3>{{Name}}</h3>
+      <p>ID:{{DI}}</p>
+      <ul>
+        <li>Population: {{Population}}</li>
+        <li><a href="city/delete/{{DI}}" class="btn btn-danger">Eliminar</a></li>
+      </ul>
+      <div class="tech">
+        <small>District: <span>{{District}}</span></small>
+      </div>
+        </div>
+
+        {{else}}
+        <p>ninguna ciudad en la base de datos</p>
+
+
+    {{/each}}
+    
+    
+  </section>
